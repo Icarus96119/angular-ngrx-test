@@ -1,0 +1,11 @@
+<div class="form-group" [class.label-input-group]="label">
+  <label class="form-label border-bottom-1 border-color-silver-chalice">
+    <span class="text-info">{{ label }}</span>
+    <div class="d-flex">
+      <input class="form-control" [min]="min" [maxLength]="maxLength" [type]="type" [placeholder]="placeholder" [(ngModel)]="value" (ngModelChange)="change($event)" [readonly]="readonly">
+      <div class="d-flex align-items-center ml-10">
+        <app-icon [icon]="icon" [width]="18" [color]="value ? 'shark' : 'waterloo'"></app-icon>
+      </div>
+    </div>
+  </label>
+</div>

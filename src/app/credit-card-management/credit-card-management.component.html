@@ -1,0 +1,54 @@
+<section class="d-flex align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <form class="px-10" [formGroup]="creditCardForm">
+          <h2 class="text-primary mb-25">Credit Card Information</h2>
+          <div class="row mb-40">
+            <div class="col-12 mb-20">
+              <app-text-input formControlName="creditCardNumber" id="{{ prefix }}_creditCardNumber" placeholder="Credit Card Number" label="Credit Card Number" icon="document"></app-text-input>
+            </div>
+            <div class="col-12 mb-20">
+              <app-text-input formControlName="cardHolder" id="{{ prefix }}_cardHolder" placeholder="Card Holder" label="Card Holder" icon="document"></app-text-input>
+            </div>
+            <div class="col-12 mb-20">
+              <app-date-picker formControlName="expirationDate" id="{{ prefix }}_expirationDate" label="Expiration Date (Please click the calendar icon)"></app-date-picker>
+            </div>
+            <div class="col-12 mb-20">
+              <app-text-input formControlName="securityCode" id="{{ prefix }}_securityCode" [maxLength]="3" placeholder="Security Code" label="Security Code(CCV)" icon="document"></app-text-input>
+            </div>
+            <div class="col-12 mb-20">
+              <app-text-input formControlName="amount" id="{{ prefix }}_amount" placeholder="Amount" type="number" label="Amount" icon="document"></app-text-input>
+            </div>
+            <div class="d-flex justify-content-center w-100">
+              <button class="btn btn-primary" (click)="submit()">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-12 col-lg-4">
+        <h2 class="text-primary mb-25">Current Credit Card Information</h2>
+        <div class="col-12 mb-20">
+          <span class="mr-5 font-weight-bold">Credit Card Number: </span>
+          <span class="mr-5">{{ currentCreditCard?.creditCardNumber }}</span>
+        </div>
+        <div class="col-12 mb-20">
+          <span class="mr-5 font-weight-bold">Card Holder: </span>
+          <span class="mr-5">{{ currentCreditCard?.cardHolder }}</span>
+        </div>
+        <div class="col-12 mb-20">
+          <span class="mr-5 font-weight-bold">Expiration Date: </span>
+          <span class="mr-5">{{ currentCreditCard?.expirationDate }}</span>
+        </div>
+        <div class="col-12 mb-20">
+          <span class="mr-5 font-weight-bold">Security Code: </span>
+          <span class="mr-5">{{ currentCreditCard?.securityCode }}</span>
+        </div>
+        <div class="col-12 mb-20">
+          <span class="mr-5 font-weight-bold">Amount: </span>
+          <span class="mr-5">{{ currentCreditCard?.amount | currency }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

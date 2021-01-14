@@ -1,0 +1,11 @@
+@mixin stroke_invalid() {
+  box-shadow: 0 0 5px 2px #f44336;
+  border-radius: 5px;
+}
+
+@mixin flex($segment, $size) {
+  flex: 0 0 $size;
+  #{$segment}: $size;
+  min-#{$segment}: $size;
+  max-#{$segment}: $size;
+}

@@ -1,0 +1,18 @@
+mat-datepicker-toggle::ng-deep {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  &::ng-deep {
+    button {
+      outline: none;
+    }
+  }
+  button {
+    height: unset !important;
+    width: unset !important;
+  }
+}
